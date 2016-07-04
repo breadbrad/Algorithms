@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\section{Master Theorem}
+$T(n) = aT(n/b) + \Theta(n^klog^pn)$ \newline
+[ $a \geq 1, b > 1, k \geq 0 $ and p is a real number ] \newline
+$1)$ if $ a > b^k $, then $T(n) = \Theta(n^{log_b a})$ \newline
+$2)$ if $ a = b^k$ \newline 
+\indent $ a) $ if $ p > -1 $, then $T(n) = \Theta(n^{log_b a}log^{p+1}n)$ \newline
+\indent $ b) $ if $ p = -1 $, then $T(n) = \Theta(n^{log_b a}loglogn)$ \newline
+\indent $ c) $ if $ p < -1 $, then $T(n) = \Theta(n^{log_b a})$ \newline
+$3)$ if $ a < b^k $ \newline 
+\indent $ a) $ if $ p \geq 0$, then $T(n) = \Theta(n^klog^pn)$ \newline
+\indent $ b) $ if $ p < 0 $, then $T(n) = \mathcal{O}(n^k) $
+\end{document}
