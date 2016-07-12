@@ -1,0 +1,84 @@
+// Hashing 1 
+insert(k) - puts key k into the hash table
+search(k) - searches for key k in the HT 
+remove(k) - removes key k from the HT 
+-> in a well formed hash table, these operations ~ average O(1)
+
+a function h(k) -> maps the universe U of keys to some index 0 to m(the number of slots)
+
+- A good hash function 
+- simple uniform hasing : each key is equally likely to hash 
+- does not hash similar keys to the same slot 
+- quick : O(1) 
+- deterministic 
+
+
+example 1 : division method 
+h(k) = k mod m
+-> 'm' should not be a power o 2 
+-> a good choice for 'm': a prime number 
+
+example 2 : multiplication method 
+h(k) = lower_bound(m(k*A mod 1)) 
+p.s. [0 < A < 1, (k*A mod 1 ) = fractional part of k*A]
+Since 0 < (k*A mod 1) < 1,
+0 < h(k) < m 
+
+A -> should not be rational numbers 
+good example : (sqrt(5)-1)/2
+
+
+Collisions 
+
+Resolutions 
+
+- chaining
+if a key collides with another key, it gets inserted into the same linked list 
+-> the worst case : O(n)
+n keys in a hash table with m slots : load factor alpha = n/m 
+the length of each linked list -> alpha
+
+- Open addressing collisions 
+
+- linear probing 
+h(k, i) =(h'(k) + i) mod m [h'(k) -> try first]
+if h(k, 0) is in collision, increment i till it finds an empty slot
+-> drawback ; cluster of adjacents slots get filled up 
+
+- quadratic probing 
+h(k,i) = (h'(k) + c1*i + c2*i^2) mod m
+-> more spacing between the slots 
+
+
+- double hashing 
+h(k,i) = (h1(k) + i*h2(k)) mod m
+
+the initial probe slot & the method to try other slots 
+-> depens on key k -> reduces the clustering effect 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
