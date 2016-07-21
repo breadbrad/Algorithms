@@ -1,0 +1,5 @@
+// A sorting algorithm is stable if elements with the same key appear in the output array in the same order as they do in the input array.
+
+Counting sort -> array A of n elements with keys in the range {1, 2, ... k}
+and sort the array in O(n + k) time. Also it is a stable sort.
+
