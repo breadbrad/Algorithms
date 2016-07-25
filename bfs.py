@@ -5,8 +5,8 @@
 -build level i > 0 from level i-1 by trying all outgoing edges,
 but ignoring vertices from previous levels '''
 def BFS(s, Adj):
-	level = {'s', 0}
-	parent = {'s', None}
+	level = {s: 0}
+	parent = {s: None}
 	i = 1
 	frontier = [s]	#previous level, i-1
 	while frontier:
