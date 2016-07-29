@@ -1,11 +1,27 @@
-Bellman-Ford(G, W, s) 
-	Initialize()
-	for i = 1 to |V| - 1
-		for each edge(u, v) that belongs to E:
-			Relax(u, v)
-		for each edge(u, v) that belongs to E:
-			do if d[v] > d[u] + w(u, v)
-				then report a negative-weight cycle exists
+-> : (that belongs to)
+v.d : shortest-path estimate 
+u.pi : predecessor 
 
-	At the end, d[v] = delta(u, v), if no negative-weight cycles 
+
+INITIALIZE-SINGLE-SOURCE(G,s)
+for each vertex v -> G.V
+	v.d = INF
+	v.pi = NIL 
+s.d = 0 
+
+RELAX(u, v, w)
+if v.d > u.d + w(u, v)
+	v.d = u.d + w(u, v)
+	v.pi = u 
+
+BELLMAN-FORD (G, w, s) 
+	INITIALIZE-SINGLE-SOURCE(G,s)
+	for i = 1 to |G.V| - 1
+		for each edge(u, v) -> G.E:
+			RELAX(u, v)
+		for each edge(u, v) -> G.E:
+			if v.d > u.d + w(u, v)
+				return FALSE
+		return TRUE 
+
 
