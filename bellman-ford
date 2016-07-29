@@ -1,0 +1,11 @@
+Bellman-Ford(G, W, s) 
+	Initialize()
+	for i = 1 to |V| - 1
+		for each edge(u, v) that belongs to E:
+			Relax(u, v)
+		for each edge(u, v) that belongs to E:
+			do if d[v] > d[u] + w(u, v)
+				then report a negative-weight cycle exists
+
+	At the end, d[v] = delta(u, v), if no negative-weight cycles 
+
