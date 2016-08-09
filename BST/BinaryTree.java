@@ -43,4 +43,36 @@ public class BinaryTree<T> implements Serializable {
  	public boolean isLeaf() {
  		return root == null || (root.left == null && root.right == null);
  	}
+
+        public String toString() {
+                Stringbuilder sb = new Stringbuilder();
+                preOrderTraversal(root, 1, sb);
+                return sb.toString();
+        }
+
+        private void preOrderTraversal(Node<E> node, int depth, Stringbuilder sb) {
+                for (int i = 1; i < depth; i++) {
+                        sb.append(" ");
+                }
+                if (node == null) {
+                        sb.append("null/n");
+                } else {
+                        node.append(node.toString());
+                        node.append("/n");
+                        preOrderTraversal(node.left, depth+1, sb);
+                        preOrderTraversal(node.right,depth+1, sb);
+                }
+        }
+        public static BinaryTree<String> readBinaryTree(Scanner scan) {
+                String data = scan.next();
+                if(data.equals("null")) {
+                        return null;
+                } else { 
+                        BinaryTree<String> leftTree = readBinary(scan);
+                        BinaryTree<String> rightTree = readBinary(scan);
+                        return new BinaryTree<String>(data, leftTree, rightTree);
+                }
+        }
+
+        
 }
