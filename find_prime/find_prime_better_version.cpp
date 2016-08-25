@@ -1,21 +1,9 @@
-// // normal prime finding algorithm 
-// public static void findPrime(int input){
-// 	int i = 2;
-// 	boolean isPrime = true;
-// 	while (i <= input) {
-// 		isPrime = true;
-// 		for (int j = 2; j < i; j++) {
-// 			if(i % j == 0) {
-// 				isPrime = false;
-// 			}
-// 			continue;
-// 		}
-// 		if(isPrime)
-// 			System.out.println(i);
-// 		i++;
-// 	}
-// }
 
+/** In order to find prime numbers using Sieve of Eratosthenes, 
+    there's no need to divide the input number N by the all multiple of numbers
+    If there is a composite number m, m is composed of a * b
+    At that point, at least one of them is less than or equal to sqrt(N)
+    */
 #include <iostream>
 #include <cmath>
 using namespace std;
