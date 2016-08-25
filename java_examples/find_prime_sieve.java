@@ -1,6 +1,7 @@
 /** Since the multiples of 3 are not prime, set primes[3 * i] to false for all 3 <= i <= n/3 
     Complexity = O( n^1.5 / log n) */
 import java.util.Scanner;
+import java.util.Arrays;
 
 class find_prime_Sieve {
         public static void main(String[] args) {
@@ -9,11 +10,13 @@ class find_prime_Sieve {
                 int n = input.nextInt();
 
                 boolean[] primes = new boolean[n + 1]; // Prime number sieve
-                int limit = (int)  Math.sqrt(primes.length);
                 // Initialize primes[i] to true
-                for (int i = 0; i < primes.length; i++) {
-                        primes[i] = true;
-                }
+                Arrays.fill(primes, Boolean.TRUE);
+
+               // for (int i = 0; i < primes.length; i++) {
+               //         primes[i] = true;
+               // }
+
 
                 for (int k = 2; k <= n/k; k++) { // k * i below is greater than n 
                         if (primes[k]) {
