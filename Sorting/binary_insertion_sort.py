@@ -12,7 +12,7 @@ def binary_search(a, x, lo=0, hi=None):
     return lo
 
 
-
+# time complexity = O(n log n)
 def binary_insertion_sort(A):
     for i in xrange(1, len(A)):
         key = A[i]
