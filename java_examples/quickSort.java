@@ -20,7 +20,7 @@ class QuickSort {
                 while(high > low) {
                         // Search forward from left
                         while(low <= high && list[low] <= pivot)
-                                low++;
+                               low++;
                         
                         // Search backward from right 
                         while(low <= high && list[high] > pivot) 
