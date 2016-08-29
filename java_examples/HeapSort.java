@@ -1,3 +1,4 @@
+// Heapsort is more space efficient than merge sort 
 class HeapSort {
         public static <E extends Comparable<E>> void heapSort(E[] list) {
                 Heap<E> heap = new Heap <E>();
