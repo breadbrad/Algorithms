@@ -5,7 +5,7 @@ void bucketSort(E[] list) {
 
         // Distribute the elements fomr list to buckets 
         for (int i = 0; i < list.length; i++) {
-                int key = list[i].getKey();
+               int key = list[i].getKey();
 
                 if (buckets[key] == null)
                         buckets[key] = new java.util.ArrayList();
